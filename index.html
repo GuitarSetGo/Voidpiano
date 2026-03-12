@@ -27,14 +27,6 @@
 <div id="header">
   <div id="logo">VOIDPIANO</div>
   <div class="h-sep"></div>
-  <div class="bpm-wrap">
-    <span class="bpm-lbl">BPM</span>
-    <button class="bpm-btn" id="bpmDn">−</button>
-    <input type="number" id="bpmInput" min="40" max="300" value="120">
-    <button class="bpm-btn" id="bpmUp">+</button>
-  </div>
-  <div class="h-sep"></div>
-  <button class="tbtn" id="playBtn">▶ PLAY</button>
   <button class="tbtn" id="recBtn">● REC</button>
   <div class="h-sep"></div>
   <div class="fx-wrap">
@@ -51,20 +43,13 @@
 <div id="main">
   <canvas id="animCanvas"></canvas>
   <div id="content">
-
-    <!-- METRONOME -->
-    <div id="metro-panel">
-      <div class="panel-lbl">METRONOME</div>
-      <canvas id="metroCanvas" width="220" height="280"></canvas>
-    </div>
-
-    <!-- CONTROLS -->
     <div id="ctrl-panel">
+
       <div class="piano-info">
         <div class="panel-lbl">INSTRUMENT</div>
         <div class="piano-badge" id="pianoBadge">🎹 SALAMANDER</div>
         <div class="piano-sub" id="pianoSub">Yamaha C5 · Warm</div>
-        <div class="piano-selector" id="pianoSelector">
+        <div class="piano-selector">
           <button class="piano-opt active" data-piano="salamander">🎹 SALAMANDER</button>
           <button class="piano-opt" data-piano="bright">✨ BRIGHT GRAND</button>
           <button class="piano-opt" data-piano="electric">⚡ ELECTRIC GRAND</button>
@@ -86,11 +71,6 @@
             <div id="volumeLbl" class="knob-lbl">80%</div>
           </div>
           <div class="knob-wrap">
-            <div class="knob-title">METRO VOL</div>
-            <canvas id="metroVolCanvas" width="90" height="90" class="knob-canvas"></canvas>
-            <div id="metroVolLbl" class="knob-lbl">70%</div>
-          </div>
-          <div class="knob-wrap">
             <div class="knob-title">REVERB</div>
             <canvas id="reverbCanvas" width="90" height="90" class="knob-canvas"></canvas>
             <div id="reverbLbl" class="knob-lbl">20%</div>
@@ -107,6 +87,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -121,11 +102,10 @@
   <span class="foot-sep">·</span>
   <span class="foot-text">© 2026 — VOIDPIANO</span>
   <span class="foot-sep">·</span>
-  <span class="foot-keys">A S D F G H J K = NOTES &nbsp;|&nbsp; W E T Y U = BLACK KEYS &nbsp;|&nbsp; SPACE = PLAY/STOP &nbsp;|&nbsp; DBL-CLICK KNOB = RESET</span>
+  <span class="foot-keys">A S D F G H J K = NOTES &nbsp;|&nbsp; W E T Y U = BLACK KEYS &nbsp;|&nbsp; DBL-CLICK KNOB = RESET</span>
 </div>
 
 <div id="tooltip"></div>
-
 <script src="script.js"></script>
 </body>
 </html>
