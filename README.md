@@ -1,6 +1,7 @@
 
 
-<img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/d3805068-9073-4d97-8afe-8060904b97c0" />
+<img width="1284" height="408" alt="image" src="https://github.com/user-attachments/assets/62268285-3e96-4f17-a580-08c69b596f75" />
+
 
 # [Click Here](https://guitarsetgo.github.io/Voidpiano/)
 
