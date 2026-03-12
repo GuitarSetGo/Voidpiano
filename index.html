@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voidpiano</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+</head>
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+  <div class="load-logo">VOIDPIANO</div>
+  <div class="load-bar-wrap"><div class="load-bar" id="loadBar"></div></div>
+  <div class="load-sub" id="loadSub">INITIALIZING...</div>
+</div>
+
+<!-- START OVERLAY -->
+<div id="startOverlay" style="display:none">
+  <div class="start-ring"><div class="start-icon">▶</div></div>
+  <div class="start-text">CLICK TO START</div>
+  <div class="start-sub">ACTIVATE AUDIO ENGINE</div>
+</div>
+
+<!-- HEADER -->
+<div id="header">
+  <div id="logo">VOIDPIANO</div>
+  <div class="h-sep"></div>
+  <div class="bpm-wrap">
+    <span class="bpm-lbl">BPM</span>
+    <button class="bpm-btn" id="bpmDn">−</button>
+    <input type="number" id="bpmInput" min="40" max="300" value="120">
+    <button class="bpm-btn" id="bpmUp">+</button>
+  </div>
+  <div class="h-sep"></div>
+  <button class="tbtn" id="playBtn">▶ PLAY</button>
+  <button class="tbtn" id="recBtn">● REC</button>
+  <div class="h-sep"></div>
+  <div class="fx-wrap">
+    <span class="fx-lbl">FX</span>
+    <label class="toggle-switch">
+      <input type="checkbox" id="fxToggle" checked>
+      <div class="toggle-track"><div class="toggle-thumb"></div></div>
+    </label>
+  </div>
+  <div class="h-spacer"></div>
+  <div class="midi-badge" id="midiBadge">MIDI ○</div>
+</div>
+
+<div id="main">
+  <canvas id="animCanvas"></canvas>
+  <div id="content">
+
+    <!-- METRONOME -->
+    <div id="metro-panel">
+      <div class="panel-lbl">METRONOME</div>
+      <canvas id="metroCanvas" width="220" height="280"></canvas>
+    </div>
+
+    <!-- CONTROLS -->
+    <div id="ctrl-panel">
+      <div class="piano-info">
+        <div class="panel-lbl">INSTRUMENT</div>
+        <div class="piano-badge" id="pianoBadge">🎹 SALAMANDER</div>
+        <div class="piano-sub" id="pianoSub">Yamaha C5 · Warm</div>
+        <div class="piano-selector" id="pianoSelector">
+          <button class="piano-opt active" data-piano="salamander">🎹 SALAMANDER</button>
+          <button class="piano-opt" data-piano="bright">✨ BRIGHT GRAND</button>
+          <button class="piano-opt" data-piano="electric">⚡ ELECTRIC GRAND</button>
+          <button class="piano-opt" data-piano="honky">🎪 HONKY TONK</button>
+        </div>
+      </div>
+
+      <div style="width:100%">
+        <div class="panel-lbl" style="margin-bottom:14px; text-align:center">CONTROLS</div>
+        <div id="knobs-grid">
+          <div class="knob-wrap">
+            <div class="knob-title">SUSTAIN</div>
+            <canvas id="sustainCanvas" width="90" height="90" class="knob-canvas"></canvas>
+            <div id="sustainLbl" class="knob-lbl">50%</div>
+          </div>
+          <div class="knob-wrap">
+            <div class="knob-title">PIANO VOL</div>
+            <canvas id="volumeCanvas" width="90" height="90" class="knob-canvas"></canvas>
+            <div id="volumeLbl" class="knob-lbl">80%</div>
+          </div>
+          <div class="knob-wrap">
+            <div class="knob-title">METRO VOL</div>
+            <canvas id="metroVolCanvas" width="90" height="90" class="knob-canvas"></canvas>
+            <div id="metroVolLbl" class="knob-lbl">70%</div>
+          </div>
+          <div class="knob-wrap">
+            <div class="knob-title">REVERB</div>
+            <canvas id="reverbCanvas" width="90" height="90" class="knob-canvas"></canvas>
+            <div id="reverbLbl" class="knob-lbl">20%</div>
+          </div>
+          <div class="knob-wrap">
+            <div class="knob-title">TONE</div>
+            <canvas id="toneCanvas" width="90" height="90" class="knob-canvas"></canvas>
+            <div id="toneLbl" class="knob-lbl">85%</div>
+          </div>
+          <div class="knob-wrap">
+            <div class="knob-title">CHORUS</div>
+            <canvas id="chorusCanvas" width="90" height="90" class="knob-canvas"></canvas>
+            <div id="chorusLbl" class="knob-lbl">0%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="piano-wrap">
+    <canvas id="pianoCanvas"></canvas>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div id="footer">
+  <span class="foot-text">DEVELOPED BY JOSHUA GONZALEZ</span>
+  <span class="foot-sep">·</span>
+  <span class="foot-text">© 2026 — VOIDPIANO</span>
+  <span class="foot-sep">·</span>
+  <span class="foot-keys">A S D F G H J K = NOTES &nbsp;|&nbsp; W E T Y U = BLACK KEYS &nbsp;|&nbsp; SPACE = PLAY/STOP &nbsp;|&nbsp; DBL-CLICK KNOB = RESET</span>
+</div>
+
+<div id="tooltip"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
