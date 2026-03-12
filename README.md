@@ -13,7 +13,6 @@ It includes a sampled grand piano, real-time audio effects, a visual metronome, 
 - 🎹 Multi-octave virtual piano
 - 🎧 Grand Piano samples
 - 🎛 Real-time controls (Sustain, Volume, Reverb, Tone, Chorus)
-- ⏱ Adjustable metronome
 - ⏺ Performance recording with MIDI export
 - 🎹 MIDI controller support
 - ✨ Reactive visual effects
@@ -29,7 +28,6 @@ W E T Y U        → Black keys
 
 **Other**
 
-- `Space` → Start / Stop metronome  
 - Double-click knobs → Reset control  
 - Mouse / Touch → Play keys
 
